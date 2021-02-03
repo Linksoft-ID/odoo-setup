@@ -29,9 +29,7 @@ fi
 sudo apt-get -y install postgresql-client-$psql_version
 
 # pyenv dependencies
-sudo apt-get install -y build-essential libssl-dev zlib1g-dev libbz2-dev libreadline-dev\
-libsqlite3-dev wget curl llvm libncurses5-dev libncursesw5-dev xz-utils tk-dev libffi-dev\
-liblzma-dev python-openssl git
+sudo apt-get install -y build-essential libssl-dev zlib1g-dev libbz2-dev libreadline-dev libsqlite3-dev wget curl llvm libncurses5-dev libncursesw5-dev xz-utils tk-dev libffi-dev liblzma-dev python-openssl git
 
 # install pyenv
 curl https://pyenv.run | bash
@@ -43,8 +41,7 @@ echo 'eval "$(pyenv virtualenv-init -)"' >> $HOME/.bashrc
 exec $SHELL
 
 # project dependencies
-sudo apt-get install -y python3-pip snapd libpq-dev libsasl2-dev python-dev python3-dev\
-libldap2-dev libssl-dev npm unzip libxml2-dev libxmlsec1-dev
+sudo apt-get install -y python3-pip snapd libpq-dev libsasl2-dev python-dev python3-dev libldap2-dev libssl-dev npm unzip libxml2-dev libxmlsec1-dev
 
 if [[ $install_nginx == [yY] || $install_nginx == [yY][eE][sS] ]]
 then
