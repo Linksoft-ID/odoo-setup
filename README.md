@@ -15,7 +15,7 @@ Python script that will run cookiecutter to scaffold Odoo project template for t
 `$ bash <(curl -sL https://bit.ly/odoo-presetup)`
 
 ## odoo-project.py
-`$ python <(curl -sL https://bit.ly/odoo-project)`
+`$ python3 <(curl -sL https://bit.ly/odoo-project)`
 
 ## odoo-project-test.py
-`$ python <(curl -sL http://bit.ly/odoo-project-test)`
+`$ python3 <(curl -sL http://bit.ly/odoo-project-test)`
