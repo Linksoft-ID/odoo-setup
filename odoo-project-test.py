@@ -6,7 +6,7 @@ from cookiecutter.prompt import read_user_choice
 mode = read_user_choice("mode", ['dev', 'prod'])
 
 
-template = "https://gitlab.linksoft.id/linksoft/odoo_project_template.git"
+template = "https://git.linksoft.id/odoo/odoo_project_template.git"
 template_name = "odoo_project_template"
 checkout = "v4.2.0"
 config_dict = get_user_config(

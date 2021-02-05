@@ -3,7 +3,7 @@ from cookiecutter.main import cookiecutter
 from cookiecutter.repository import determine_repo_dir
 from cookiecutter.config import get_user_config
 
-template = "https://gitlab.linksoft.id/linksoft/odoo_project_template.git"
+template = "https://git.linksoft.id/odoo/odoo_project_template.git"
 template_name = "odoo_project_template"
 checkout = "master"
 config_dict = get_user_config(
