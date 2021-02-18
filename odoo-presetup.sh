@@ -38,8 +38,6 @@ echo 'export PATH="$HOME/.pyenv/bin:$PATH"' >> $HOME/.bashrc
 echo 'eval "$(pyenv init -)"' >> $HOME/.bashrc
 echo 'eval "$(pyenv virtualenv-init -)"' >> $HOME/.bashrc
 
-exec $SHELL
-
 # project dependencies
 sudo apt-get install -y python3-pip snapd libpq-dev libsasl2-dev python-dev python3-dev libldap2-dev libssl-dev npm unzip libxml2-dev libxmlsec1-dev
 
