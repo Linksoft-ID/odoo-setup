@@ -7,6 +7,8 @@ then
     read -p "What version of PostgreSQL that you want to install in this server?: " psql_version
 fi
 
+read -p "Install WKHTMLTOPDF in this server? [Y/N]: " install_wkhtmltopdf && [[ $install_wkhtmltopdf == [yY] || $install_wkhtmltopdf == [yY][eE][sS] || $install_wkhtmltopdf == [nN] ]] || exit 1
+
 read -p "Install Nginx in this server? [Y/N]: " install_nginx && [[ $install_nginx == [yY] || $install_nginx == [yY][eE][sS] || $install_nginx == [nN] ]] || exit 1
 read -p "Install Nginx Certbot in this server? [Y/N]: " install_nginx_certbot && [[ $install_nginx_certbot == [yY] || $install_nginx_certbot == [yY][eE][sS] || $install_nginx_certbot == [nN] ]] || exit 1
 
@@ -27,6 +29,17 @@ then
 fi
 
 sudo apt-get -y install postgresql-client-$psql_version
+
+if [[ $install_wkhtmltopdf == [yY] || $install_wkhtmltopdf == [yY][eE][sS] ]]
+then
+    WKHTMLTOPDF_DEB_NAME="wkhtmltox_0.12.5-1.$(lsb_release -cs)_amd64.deb"
+    WKHTMLTOPDF_DEB_URL="https://github.com/wkhtmltopdf/wkhtmltopdf/releases/download/0.12.5/$WKHTMLTOPDF_DEB_NAME"
+    if ! [ -f /tmp/$WKHTMLTOPDF_DEB_NAME ]; then
+        curl -L $WKHTMLTOPDF_DEB_URL -o /tmp/$WKHTMLTOPDF_DEB_NAME
+    fi
+    sudo dpkg -i /tmp/$WKHTMLTOPDF_DEB_NAME
+    sudo apt install -f
+fi
 
 # pyenv dependencies
 sudo apt-get install -y build-essential libssl-dev zlib1g-dev libbz2-dev libreadline-dev libsqlite3-dev wget curl llvm libncurses5-dev libncursesw5-dev xz-utils tk-dev libffi-dev liblzma-dev python-openssl git
