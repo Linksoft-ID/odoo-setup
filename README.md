@@ -24,6 +24,13 @@ Python script that will run cookiecutter to scaffold Odoo project template for t
 ## How to create a system user?
 `$ sudo adduser --system --home=/opt/odoo --shell=/bin/bash --group odoo`
 
+When new user added, they won't have pyenv installed on their home directory. So, use these command below to install pyenv after new user added:
+```bash
+$ sudo su odoo
+$ bash <(curl -sL http://bit.ly/pyenv-install)
+```
+Then you can call **odoo-project.py** or **odoo-project-test.py** in that new user.
+
 ## How to allow users to use sudo without a password?
 First, run this command:
 
