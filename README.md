@@ -19,3 +19,24 @@ Python script that will run cookiecutter to scaffold Odoo project template for t
 
 ## odoo-project-test.py
 `$ python3 <(curl -sL http://bit.ly/odoo-project-test)`
+
+# FAQ
+## How to create a system user?
+`$ sudo adduser --system --home=/opt/odoo --shell=/bin/bash --group odoo`
+
+## How to allow users to use sudo without a password?
+First, run this command:
+
+`$ sudo visudo`
+
+It will open visudo editor, add this line in bottom of the file:
+```bash
+odoo ALL=(ALL) NOPASSWD:ALL
+```
+
+## How to create a database user?
+```bash
+$ sudo su postgres
+$ createuser -dP odoo
+$ exit
+```
